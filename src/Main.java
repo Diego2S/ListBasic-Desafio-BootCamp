@@ -1,24 +1,23 @@
-import Ordenacao.OrdenacaoPessoa;
-import Ordenacao.Pessoa;
+import list.Ordenacao.OrdenacaoPessoa;
+import list.Ordenacao.Pessoa;
+import set.ConjuntoConvidados;
+import set.Convidado;
 
 public class Main {
     public static void main(String[] args) {
 
-        OrdenacaoPessoa pessoa = new OrdenacaoPessoa();
+        ConjuntoConvidados conv = new ConjuntoConvidados();
 
-        pessoa.adicionarPessoa(new Pessoa("nome 1",12,1.50));
-        pessoa.adicionarPessoa(new Pessoa("nome 2",22,1.80));
-        pessoa.adicionarPessoa(new Pessoa("nome 4",42,1.90));
-        pessoa.adicionarPessoa(new Pessoa("nome 3",16,1.70));
+        conv.exibirConvidados();
+        conv.adicionarConvidado(new Convidado("conv1",1));
+        conv.adicionarConvidado(new Convidado("conv2",2));
+        conv.adicionarConvidado(new Convidado("conv3",2));
+        conv.adicionarConvidado(new Convidado("conv4",4));
+        conv.adicionarConvidado(new Convidado("conv5",5));
 
-        System.out.println(pessoa.getPessoaList());
-
-        System.out.println(pessoa.ordenadoPorIdade());
-        System.out.println(pessoa.ordenarPorAltura());
-
-
-
-
-
+        conv.exibirConvidados();
+        System.out.println();
+        conv.removerConvidadoPorCodigo(5);
+        conv.exibirConvidados();
     }
 }
