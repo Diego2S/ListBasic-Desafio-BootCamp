@@ -1,23 +1,20 @@
-import OperacoesBasicas.CarrinhoDeCompras;
-import OperacoesBasicas.Item;
-import OperacoesBasicas.ListaTarefa;
-import Pesquisa.CatalogoLivros;
+import Ordenacao.OrdenacaoPessoa;
+import Ordenacao.Pessoa;
 
 public class Main {
     public static void main(String[] args) {
 
-        CatalogoLivros listaLivros= new CatalogoLivros();
+        OrdenacaoPessoa pessoa = new OrdenacaoPessoa();
 
-        listaLivros.adicionarLivro("Livro 1","eu",2023);
-        listaLivros.adicionarLivro("Livro 2","eu",2020);
-        listaLivros.adicionarLivro("Livro 3","vc",2023);
-        listaLivros.adicionarLivro("Livro 4","eu",2021);
-        listaLivros.adicionarLivro("Livro 7","vc",2020);
+        pessoa.adicionarPessoa(new Pessoa("nome 1",12,1.50));
+        pessoa.adicionarPessoa(new Pessoa("nome 2",22,1.80));
+        pessoa.adicionarPessoa(new Pessoa("nome 4",42,1.90));
+        pessoa.adicionarPessoa(new Pessoa("nome 3",16,1.70));
 
-        System.out.println(listaLivros.pesquisarPorAutor("eu"));
-        System.out.println(listaLivros.pesquisarPorIntervaloAnos(2022,2023));
-        System.out.println(listaLivros.pesquisarPorTitulo("livro 7"));
+        System.out.println(pessoa.getPessoaList());
 
+        System.out.println(pessoa.ordenadoPorIdade());
+        System.out.println(pessoa.ordenarPorAltura());
 
 
 
