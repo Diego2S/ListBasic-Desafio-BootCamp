@@ -1,23 +1,21 @@
-import list.Ordenacao.OrdenacaoPessoa;
-import list.Ordenacao.Pessoa;
-import set.ConjuntoConvidados;
-import set.Convidado;
+import maps.AgendaContatos;
+import maps.AgendaEventos;
+import maps.EstoqueProdutos;
+
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
 
-        ConjuntoConvidados conv = new ConjuntoConvidados();
+        AgendaEventos agendaEventos = new AgendaEventos();
 
-        conv.exibirConvidados();
-        conv.adicionarConvidado(new Convidado("conv1",1));
-        conv.adicionarConvidado(new Convidado("conv2",2));
-        conv.adicionarConvidado(new Convidado("conv3",2));
-        conv.adicionarConvidado(new Convidado("conv4",4));
-        conv.adicionarConvidado(new Convidado("conv5",5));
+        agendaEventos.adicionandoEvento(LocalDate.of(2023,9,25),"Show","pitty");
+        agendaEventos.adicionandoEvento(LocalDate.of(2023,9,20),"Show","vitar");
+        agendaEventos.adicionandoEvento(LocalDate.of(2023,12,25),"natal","papai noel");
 
-        conv.exibirConvidados();
-        System.out.println();
-        conv.removerConvidadoPorCodigo(5);
-        conv.exibirConvidados();
+
+        agendaEventos.exibirAgenda();
+
+        agendaEventos.obterProximoEvento();
     }
 }
